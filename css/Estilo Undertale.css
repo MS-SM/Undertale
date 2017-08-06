@@ -60,6 +60,8 @@ button {border-radius: 0px;}
   text-align: center;
 }
 
+.click{}
+
 .Botón1{
     background:url('../images/intro.png') center;
     background-size: 100% 100%;
