@@ -1,0 +1,263 @@
+@font-face {
+	font-family:"Determination Sans Web";
+	src:local('../Determination Sans Web'),url('../fonts/DeterminationSansWeb.eot') format("eot"),url('../fonts/DeterminationSansWeb.woff') format("woff"),url('../fonts/DeterminationSansWeb.otf') format("opentype");
+}
+
+
+body {
+  background-color:#000;
+  font-family: "Comic Sans MS", sans-serif;
+  font-weight: bold;
+  color: white;
+  padding-top: 180px;
+}
+
+li, ul, p {
+  text-align: justify;
+  font-size: 20px;
+  font-weight:normal;
+  color: white;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
+}
+
+button {border-radius: 0px;}
+
+.titulo {
+  font-family:"Determination Sans Web", "Comic Sans MS", sans-serif;
+  text-align: left;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.centra-img {
+  text-align:center;
+  padding: 20px;
+}
+
+.caja {
+  border: 5px solid #fff;
+  padding: 40px;
+  margin:10px;
+  margin-top: 800px;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+.menu {
+	list-style-type:none;
+  padding-top: 200px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.Botón1{
+    background:url('../images/intro.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 300px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón1:hover{
+    background:url('../images/intro_activo.png') center;
+}
+
+.Botón2{
+    background:url('../images/historia.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 168px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón2:hover{
+    background:url('../images/historia_activo.png') center;
+}
+
+.Botón3{
+    background:url('../images/personajes.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 202px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón3:hover{
+    background:url('../images/personajes_activo.png') center;
+}
+
+.Botón4{
+    background:url('../images/jugabilidad.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 216px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón4:hover{
+    background:url('../images/jugabilidad_activo.png') center;
+}
+
+.Botón5{
+    background:url('../images/desarrollo.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 198px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón5:hover{
+    background:url('../images/desarrollo_activo.png') center;
+}
+
+.Botón6{
+    background:url('../images/lanzamiento.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 223px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón6:hover{
+    background:url('../images/lanzamiento_activo.png') center;
+}
+
+.Botón7{
+    background:url('../images/recepción.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 177px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón7:hover{
+    background:url('../images/recepción_activo.png') center;
+}
+
+.Botón8{
+    background:url('../images/curiosidades.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 230px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.Botón8:hover{
+    background:url('../images/curiosidades_activo.png') center;
+}
+
+.Botón9{
+    background:url('../images/extra.png') center;
+    background-size: 100% 100%;
+    border: none;
+    width: 341px;
+    height: 42px;
+}
+
+.Botón9:hover{
+    background:url('../images/extra_activo.png') center;
+}
+
+
+
+
+
+#contenedor {height: 740px}
+
+
+.bajar-img {text-align:center;
+  margin-top: 80px;
+}
+
+
+
+
+
+a.prev,a.next {
+	height:91px;
+	position:absolute;
+	width:43px;
+	top:110%;
+	margin-top:-30px;
+	opacity:0.6;
+	text-indent:-99999px;
+	cursor:pointer;
+	-webkit-transition:opacity 200ms ease-out;
+}
+
+a.prev:hover,a.next:hover {
+	opacity:1;
+}
+
+.prev {
+	left:0;
+	background: url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -200px 25px;
+  left:0;
+}
+
+.next {
+	right:0;
+	background: url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -167px 25px;
+}
+
+.slider {
+	height:50vh;
+	position: relative;
+}
+
+.slide {
+	position:absolute;
+	height:50%;
+	width:100%;
+}
+
+.slider .slide:target {
+	z-index: 100;
+}
+
+
+
+
+
+.subir{
+  background:url('../images/subir.png') center;
+  background-size: 100% 100%;
+  border: none;
+  width: 146px;
+  height: 30px;
+  margin-left: 6px;
+}
+
+.subir:hover {
+    background:url('../images/subir_activo.png') center;
+}
+
+
+
+
+
+.pie {
+  border: 5px solid #fff;
+  padding: 20px;
+  padding-top: 60px;
+  margin:10px;
+  text-align: center;
+}
