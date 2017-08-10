@@ -11,11 +11,12 @@
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/font-awesome.css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,10 +30,45 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" type="text/javascript"></script>
   <script type="text/javascript">
+
+    // SONIDO AL HACER CLICK SOBRE EL MENÚ =========================================================
+  $('.slider li:first').show();
   $(document) .ready(function(){
-    $('button') .click(function(){
-      $('audio') [0] .play();
+    $('.click') .click(function(){ //Al activarse la clase "click"
+      $('audio') [0] .play(); // Se reproduce el sonido
     });
+
+    // SLIDER =========================================================
+
+    var imgItems = $('.slider li').length; // Numero de Slides
+    var imgPos = 1;
+    //------------------------
+
+    $('.slider li').hide(); // Ocultanos todos los slides
+    $('.slider li:first').show(); // Mostramos el primer slide
+
+    // Ejecutamos todas las funciones
+    $('.right span').click(nextSlider);
+    $('.left span').click(prevSlider);
+
+
+    // FUNCIONES =========================================================
+
+    function nextSlider(){
+      if( imgPos >= imgItems){imgPos = 1;}
+      else {imgPos++;}
+      $('.slider li').hide(); // Ocultamos todos los slides
+      $('.slider li:nth-child('+ imgPos +')').fadeIn(0); // Mostramos el Slide seleccionado
+
+    }
+
+    function prevSlider(){
+      if( imgPos <= 1){imgPos = imgItems;}
+      else {imgPos--;}
+      $('.slider li').hide(); // Ocultamos todos los slides
+      $('.slider li:nth-child('+ imgPos +')').fadeIn(0); // Mostramos el Slide seleccionado
+    }
+
   });
   </script>
 
@@ -43,6 +79,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
 
+    <!-- MOUSE -->
   <style type="text/css">
   body { cursor: url('data:image/x-icon;base64,AAACAAEAICACAAAAAAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAA/AAAAf4AAAP/AAAH/4AAD//AAB//4AA///AAP//wAD//8AA///AAP//wAD//8AA///AAP//wAB/P4AAPh8AABgGAAAAAAAA//////////////////////////////////////////////////////////////////////4f///8D///+Af///AD///gAf//wAD//4AAf/8AAD//AAA//wAAP/8AAD//AAA//wAAP/8AAD//AAA//4DAf//B4P//5/n///////8='), auto; }
   </style>
@@ -57,15 +94,15 @@
       </div>
 
       <div class="menu">
-        <a href="#intro"><button class="Botón1"></button></a>
-        <a href="#historia"><button class="Botón2"></button></a>
-        <a href="#personajes"><button class="Botón3"></button></a>
-        <a href="#jugabilidad"><button class="Botón4"></button></a>
-        <a href="#desarrollo"><button class="Botón5"></button></a>
-        <a href="#lanzamiento"><button class="Botón6"></button></a>
-        <a href="#recepción"><button class="Botón7"></button></a>
-        <a href="#curiosidades"><button class="Botón8"></button></a>
-        <a href="#extra"><button class="Botón9"></button></a>
+        <a href="#intro"><button class="Botón1 click"></button></a>
+        <a href="#historia"><button class="Botón2 click"></button></a>
+        <a href="#personajes"><button class="Botón3 click"></button></a>
+        <a href="#jugabilidad"><button class="Botón4 click"></button></a>
+        <a href="#desarrollo"><button class="Botón5 click"></button></a>
+        <a href="#lanzamiento"><button class="Botón6 click"></button></a>
+        <a href="#recepción"><button class="Botón7 click"></button></a>
+        <a href="#curiosidades"><button class="Botón8 click"></button></a>
+        <a href="#extra"><button class="Botón9 click"></button></a>
       </div>
 
       <audio src="sounds/click.ogg" preload>
@@ -73,7 +110,7 @@
       </audio>
 
       <div class="twelve columns">
-        <div class="centra-img"><img src="images/Fondo-menu.jpg" alt="Titulo" /></div>
+        <div style= "margin-bottom: 800px;" class="centra-img"><img src="images/Fondo-menu.jpg" alt="Titulo" /></div>
       </div>
 
     </div>
@@ -91,6 +128,10 @@
 
       <a href="#arriba"><button class="subir"></button></a>
 
+      <div class="row centra-img">
+        <img class= "monstruo" src="images/Froggit.gif" alt="Froggit" />
+      </div>
+
     <!-- ROW3 1 COLUMNA (HISTORIA) -->
     <div class="row caja">
       <div class="twelve columns">
@@ -103,6 +144,11 @@
 
       <a href="#arriba"><button class="subir"></button></a>
 
+      <div class="row centra-img">
+        <img style="margin-right: 100px;" class= "monstruo" src="images/Loox.gif" alt="Loox" />
+        <img class= "monstruo" src="images/Vegetoid.gif" alt="Vegetoid" />
+      </div>
+
 
       <div id="contenedor" class="row caja">
 
@@ -112,104 +158,57 @@
         </div>
 
 
-      <div class="slider">
-
         <!-- ROW5 1 COLUMNA (PERSONAJES-SLIDER) -->
-        <div id="no-js-slider-1" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Frisk.jpg" alt="Frisk" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-9">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-2">next</a>
-         </div>
+        <div class="slideshow">
+      		<ol class="slider">
+        <li>
+          <img style="padding-left: 25px;" src="images/Frisk.jpg" alt="Frisk" />
+        </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Flowey.jpg" alt="Flowey" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Toriel.jpg" alt="Toriel" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Sans.jpg" alt="Sans" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Papyrus.jpg" alt="Papyrus" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Undyne.jpg" alt="Undyne" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Alphys.jpg" alt="Alphys" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Mettaton.jpg" alt="Mettaton" />
+          </li>
+        <li>
+          <img style="padding-left: 25px;" src="images/Asgore.jpg" alt="Asgore" />
+          </li>
+        </ol>
 
-        <div id="no-js-slider-2" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Flowey.jpg" alt="Flowey" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-1">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-3">next</a>
-          </div>
+        <div class="left">
+    			<span class="fa fa-chevron-left"></span>
+    		</div>
 
-        <div id="no-js-slider-3" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Toriel.jpg" alt="Toriel" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-2">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-4">next</a>
-          </div>
+    		<div class="right">
+    			<span class="fa fa-chevron-right"></span>
+    		</div>
 
-        <div id="no-js-slider-4" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Sans.jpg" alt="Sans" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-3">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-5">next</a>
-          </div>
 
-        <div id="no-js-slider-5" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Papyrus.jpg" alt="Papyrus" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-4">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-6">next</a>
-          </div>
-
-        <div id="no-js-slider-6" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Undyne.jpg" alt="Undyne" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-5">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-7">next</a>
-          </div>
-
-        <div id="no-js-slider-7" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Alphys.jpg" alt="Alphys" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-6">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-8">next</a>
-          </div>
-
-        <div id="no-js-slider-8" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Mettaton.jpg" alt="Mettaton" /></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-7">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-9">next</a>
-          </div>
-
-        <div id="no-js-slider-9" class="slide">
-          <div class="row">
-            <div class="twelve columns">
-            <div class="bajar-img"><img src="images/Asgore.jpg" alt="Asgore" ></div>
-            </div>
-          </div>
-          <a rel="nofollow" rel="noreferrer"class="prev" href="#no-js-slider-8">prev</a>
-          <a rel="nofollow" rel="noreferrer"class="next" href="#no-js-slider-1">next</a>
-          </div>
-
-        </div>
-
+      </div>
       </div>
 
       <a href="#arriba"><button class="subir"></button></a>
+
+      <div class="row centra-img">
+        <img style="margin-right: 100px;" class= "monstruo" src="images/Snowdrake.gif" alt="Snowdrake" />
+        <img style="margin-right: 100px;" class= "monstruo" src="images/Jerry.gif" alt="Jerry" />
+        <img class= "monstruo" src="images/Icecap.gif" alt="Icecap" />
+      </div>
 
       <!-- ROW6 1 COLUMNA (JUGABILIDAD) -->
       <div class="row caja">
@@ -248,6 +247,10 @@
 
       <a href="#arriba"><button class="subir"></button></a>
 
+      <div class="row centra-img">
+        <img class= "monstruo" src="images/Dog_Marriage.gif" alt="Dog_Marriage" />
+      </div>
+
       <!-- ROW7 1 COLUMNA (DESARROLLO) -->
       <div class="row caja">
         <div class="twelve columns">
@@ -260,6 +263,11 @@
 
       <a href="#arriba"><button class="subir"></button></a>
 
+      <div class="row centra-img">
+        <img style="margin-right: 100px;" class= "monstruo" src="images/Moldsmal.gif" alt="Moldsmal" />
+        <img class= "monstruo" src="images/Moldbygg.gif" alt="Moldbygg" />
+      </div>
+
         <!-- ROW8 1 COLUMNA (LANZAMIENTO) -->
         <div class="row caja">
           <div class="twelve columns">
@@ -270,6 +278,11 @@
           </div>
 
       <a href="#arriba"><button class="subir"></button></a>
+
+      <div class="row centra-img">
+        <img style="margin-right: 100px;" class= "monstruo" src="images/Tsuavi.gif" alt="Tsuavi" />
+        <img class= "monstruo" src="images/Vulkin.gif" alt="Vulkin" />
+      </div>
 
           <!-- ROW9 1 COLUMNA (RECEPCIÓN) -->
           <div class="row caja">
@@ -284,6 +297,12 @@
             </div>
 
       <a href="#arriba"><button class="subir"></button></a>
+
+      <div class="row centra-img">
+        <img style="margin-right: 100px;" class= "monstruo" src="images/Astigmatism.gif" alt="Astigmatism" />
+        <img style="margin-right: 100px;" class= "monstruo" src="images/FinalFroggit.gif" alt="FinalFroggit" />
+        <img class= "monstruo" src="images/Whimsalot.gif" alt="Whimsalot" />
+      </div>
 
         <!-- ROW10 1 COLUMNA (CURIOSIDADES) -->
         <div class="row caja">
@@ -303,6 +322,10 @@
         </div>
 
       <a href="#arriba"><button class="subir"></button></a>
+
+      <div class="row centra-img">
+        <img class= "monstruo" src="images/ReaperBird.gif" alt="ReaperBird" />
+      </div>
 
           <!-- ROW11 1 COLUMNA (EXTRA) -->
           <div class="row caja">
