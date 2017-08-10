@@ -30,6 +30,7 @@ a:hover {
   color: #fff;
 }
 
+img, iframe {max-width: 100%;}
 
 button {border-radius: 0px;}
 
