@@ -206,7 +206,7 @@ button {border-radius: 0px;}
 
 .left, .right{
 	position: absolute;
-	top: -60px;
+	top: -80px;
 	height: 100%;
 
 	display: flex;
