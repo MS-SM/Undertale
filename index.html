@@ -44,10 +44,10 @@
     var imgPos = 1;
     //------------------------
 
-    $('.slider li').hide(); // Ocultanos todos los slides
-    $('.slider li:first').show(); // Mostramos el primer slide
+    $('.slider li').hide(); // Oculta todos los slides
+    $('.slider li:first').show(); // Muestra el primer slide
 
-    // Ejecutamos todas las funciones
+    // Ejecuta todas las funciones
     $('.right span').click(nextSlider);
     $('.left span').click(prevSlider);
 
@@ -57,16 +57,16 @@
     function nextSlider(){
       if( imgPos >= imgItems){imgPos = 1;}
       else {imgPos++;}
-      $('.slider li').hide(); // Ocultamos todos los slides
-      $('.slider li:nth-child('+ imgPos +')').fadeIn(0); // Mostramos el Slide seleccionado
+      $('.slider li').hide(); // Oculta todos los slides
+      $('.slider li:nth-child('+ imgPos +')').fadeIn(0); // Muestra el slide seleccionado
 
     }
 
     function prevSlider(){
       if( imgPos <= 1){imgPos = imgItems;}
       else {imgPos--;}
-      $('.slider li').hide(); // Ocultamos todos los slides
-      $('.slider li:nth-child('+ imgPos +')').fadeIn(0); // Mostramos el Slide seleccionado
+      $('.slider li').hide(); // Oculta todos los slides
+      $('.slider li:nth-child('+ imgPos +')').fadeIn(0); // Muestra el slide seleccionado
     }
 
   });
